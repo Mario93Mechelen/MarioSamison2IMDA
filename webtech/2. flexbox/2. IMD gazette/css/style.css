@@ -1,0 +1,30 @@
+h1{
+  font-family: Oswald;
+	text-align: center;
+}
+body
+{
+	font-family: "Playfair Display";
+}
+article img
+{
+	max-width: 100%;
+	width:100%;
+}
+@media (min-width:700px){
+	section
+	{
+		display:flex;
+		max-width: 1200px;
+		margin:0 auto;
+	}
+	article
+	{
+		padding:1em;
+		flex:1 1 0;
+	}
+	article.xl
+	{
+		flex-grow: 2;
+	}
+}

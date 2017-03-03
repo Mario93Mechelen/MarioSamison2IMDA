@@ -1,0 +1,41 @@
+.lego
+{
+  background-color: #DDDDDD;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.block
+{
+  box-sizing: border-box;
+  padding: 1em;
+  flex: 2 1 0;
+}
+
+.block1
+{
+  background-color: #39CCCC;
+	order:4;
+}
+
+.block2
+{
+  background-color: #2ECC40;
+	flex-grow:2;
+}
+
+.block3
+{
+  background-color: #01FF70;
+}
+
+.block4
+{
+  background-color: #FF4136;
+}
