@@ -1,0 +1,117 @@
+li
+{
+	list-style-type: none;
+}
+nav ul
+{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.logo
+{
+	text-align: center;
+	flex-basis: 100%;
+}
+.branding,
+.ui,
+.graffiti,
+.typography
+{
+	flex-basis:50%;
+	text-align: center;
+}
+#photos
+{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+#photos div
+{
+	margin-top:20px;
+	flex-basis:100%;
+	flex-grow: 2;
+
+}
+#photos img
+{
+	display: block;
+	margin: auto;
+}
+@media (min-width:450px)
+{
+	.branding,
+	.ui,
+	.typography
+	{
+		flex-basis:33.33%;
+	}
+	.graffiti
+	{
+		flex-basis:100%;
+	}
+}
+@media (min-width:480px)
+{
+	#photos div
+	{
+		flex-basis:50%;
+	}
+}
+@media (min-width:550px)
+{
+	.branding,
+	.ui,
+	.graffiti,
+	.typography
+	{
+		flex-basis:25%;
+	}
+}
+@media (min-width:620px)
+{
+	#photos div
+	{
+		flex-basis: 33.33%;
+	}
+}
+@media (min-width:700px)
+{
+	
+	nav ul
+	{
+		flex-wrap: nowrap;
+	}
+	nav ul li
+	{
+		flex-basis:20%;
+		flex-grow:1;
+	}
+	.typography
+	{
+		order:1;
+		margin-top:20px;
+	}
+	.ui
+	{
+		order:2;
+		margin-top:20px;
+	}
+	.branding
+	{
+		order:4;		
+		margin-top:20px;
+	}
+	.graffiti
+	{
+		order:5;
+		margin-top:20px;
+	}
+	.logo
+	{
+		flex-basis:20%;
+		order:3;
+		flex-grow:1;
+	}
+}
