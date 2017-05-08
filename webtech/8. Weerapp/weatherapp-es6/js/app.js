@@ -38,28 +38,31 @@ class Weather
 			dataType:"jsonp"
 		}).done(function(response){
 			console.log(response);
-			that.weather = response.currently;
-			that.updateUI();
+			that.weather = response.currently.apparentTemperature;
 			that.time = new Date().getTime();
 			that.storeInCache();
+			that.updateUI();
 			console.log("this is the first time you visit this page");
 		});
 		}else{
 			that.time = localStorage.getItem("time");
 			localStorage.setItem("time",that.time);
-			var newTime = that.time+(60*60*1000);
-			var currentTime = new Date().getTime();
-			if(currentTime>newTime){
+			var newTime = new Date().getTime();
+			that.time = parseInt(that.time);
+			console.log(newTime);
+			console.log(that.time);
+			console.log(that.time+60*60*1000);
+			if(newTime>that.time+60*60*1000){
 			$.ajax({
 			method:'GET',
 			url:call,
 			dataType:"jsonp"
 			}).done(function(response){
 			console.log(response);
-			that.weather = response.currently;
-			that.updateUI();
+			that.weather = response.currently.apparentTemperature;
 			that.time = new Date().getTime();
 			that.storeInCache();
+			that.updateUI();
 			console.log("current time is bigger");
 			});	
 			}else{
@@ -77,18 +80,17 @@ class Weather
 		var that = this;
 		var hour = new Date().getHours();
 		console.info(hour);
-		that.weather = JSON.parse(that.weather);
 		var color;
 		var background;
 		var info;
 		var visibility;
 		var pic = "url(images/deer-white.png";
-		if(hour<9 || hour>5 || hour>19 ||hour>21){
+		if((hour<9 && hour>5) || (hour>19 && hour<21)){
 			color = "white";
 			background = '#3AB795';
 			visibility = "url(images/eye-fully.png)";
 			info = "It's possible you can spot a deer grazing";
-			if(that.weather.apparentTemperatur<0){
+			if(that.weather<0){
 			color = "white";
 			background = '#246EB9';
 			visibility = "url(images/eye-closed.png)";
@@ -100,7 +102,7 @@ class Weather
 			visibility ="url(images/eye-partly.png)" ;
 			info="You won't possibly spot any deer at this moment of the day";
 		}
-		$("#temp").append(`<h1 style="color:${color};">${Math.round(that.weather.apparentTemperature)}°C</h1>`)
+		$("#temp").append(`<h1 style="color:${color};">${Math.round(that.weather)}°C</h1>`)
 		$('#app').css("background-color",background);
 		$("#pic").css("background-image",pic);
 		$('#info').append(`<h2 style="color:${color};">${info}</h2`);
@@ -110,7 +112,7 @@ class Weather
 	storeInCache(){
 		var that = this;
 		localStorage.setItem("time", that.time);
-		localStorage.setItem("weather", JSON.stringify(that.weather));
+		localStorage.setItem("weather", that.weather);
 	}
 	
 }
