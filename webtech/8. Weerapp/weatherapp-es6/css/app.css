@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align:center;
+}
+
+#app{
+    display: flex;
+    align-items: center;
+	flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    font-family: Helvetica;
+    color: white;
+}
+#temp{
+	font-size:5vh;
+}
+#animal
+{
+	display: flex;
+	flex-direction: row;
+	height:50vh;
+	width:80%;
+}
+#info, #pic, #visibility
+{
+	width:33.33%;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#info
+{
+	margin-top:150px;
+}
+#visibility
+{
+	margin-top:100px;
+	background-position: 50%;
+}
