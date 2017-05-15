@@ -5,12 +5,12 @@ html(lang='en')
   body(style='background-color:#3AB795;color:white; font-family:helvetice,arial,sans-serif')
     div(style='width:50%;height:300px;position:relative;margin:auto;left:0;right;0:bottm:0;top:100px')
       h1(style='text-align:center;font-size:2em;font-family:arial,sans-serif;') Add a message and a username and post your message!
-      form(action='#', method='post', style='background-color:#22AA4B;border-radius:20px;height:250px;width:80%;position:relative;margin:auto;left:0;right;0:bottm:0;top:0;margin)')
+      form(action='#', method='post', style='box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);background-color:#22AA4B;border-radius:20px;height:250px;width:80%;position:relative;margin:auto;left:0;right;0:bottm:0;top:0;margin)')
         label(for='user', style='font-weight:bold;text-align:center;display:block;width:50%;margin:auto;padding-top:20px;') User
         input(name='user', class='user', type='text', style='background-color:transparent;border:0px;border-bottom:2px solid white;display:block;width:50%;margin:auto;margin-bottom:20px;')
         label(for='message', style='font-weight:bold;text-align:center;display:block;width:50%;margin:auto;') Message
         input(name='message', class='message', type='text', style='background-color:transparent;border:0px;border-bottom:2px solid white;display:block;width:50%;margin:auto;margin-bottom:50px;')
-        button(class='btn', style='cursor:pointer;border:0px; height:40px;border-radius:10px;display:block;margin:auto;width:50%;background-color:white;color:#22AA4B;') Send Message
+        button(class='btn', style='cursor:pointer;border:0px; height:40px;display:block;margin:auto;width:50%;background-color:white;color:#22AA4B;position: relative;padding: 0;overflow: hidden;border-width: 0;outline: none;border-radius: 2px;box-shadow: 0 1px 4px rgba(0, 0, 0, .6);') Send Message
     div(style='margin-top:200px;color:#3AB795;display:flex;flex-direction:column;', class='messageContainer')
   script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
   script(src='/javascript/script.js')
